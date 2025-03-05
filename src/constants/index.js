@@ -22,6 +22,7 @@ import {
 	carrent,
 	jobit,
 	tripguide,
+	Charts_heatMaps,
 	threejs,
 } from '../assets';
 
@@ -210,6 +211,15 @@ const projects = [
 		tags: [],
 		image: jobit,
 		source_code_link: 'https://www.nahno.org/',
+	},
+	,
+	{
+		name: 'Charts-heatMaps',
+		description:
+			'Charts and heat-maps are visual tools used to display data in a clear and concise way. They come in different types and are commonly used in business, science, and other fields.',
+		tags: [],
+		image: Charts_heatMaps,
+		source_code_link: 'https://main.d3lelljq56c044.amplifyapp.com/',
 	},
 ];
 

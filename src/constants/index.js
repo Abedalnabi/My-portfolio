@@ -143,7 +143,7 @@ const experiences = [
 		],
 	},
 	{
-		title: 'Full-stack Developer',
+		title: 'Full-stack Developer (Part-time)',
 		company_name: 'CBM integrated software Inc. ',
 		icon: shopify,
 		iconBg: '#383E56',
@@ -157,7 +157,7 @@ const experiences = [
 		],
 	},
 	{
-		title: 'Software Engineer',
+		title: 'Software Engineer (Full-time)',
 		company_name: 'myKloud ',
 		icon: meta,
 		iconBg: '#E6DEDD',

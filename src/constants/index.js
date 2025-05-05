@@ -122,7 +122,7 @@ const experiences = [
 		company_name: 'UNICEF',
 		icon: starbucks,
 		iconBg: '#383E56',
-		date: 'Jul 2023- Dec 2024',
+		date: 'Jul 2023- Feb 2025',
 		points: [
 			'Enhanced user experiences through dynamic and responsive front-end development: built interfaces using React.js, ensuring accessibility and responsiveness.',
 			'Collaborated with cross-functional teams: aligned technical solutions with product goals and delivered seamless integration with backend systems.',

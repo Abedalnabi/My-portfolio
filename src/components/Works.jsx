@@ -22,6 +22,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
 					speed: 450,
 				}}
 				className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+				style={{ minHeight: '500px' }}
 			>
 				<div className="relative w-full h-[230px]">
 					<img src={image} alt="project_image" className="w-full h-full object-cover rounded-2xl" />

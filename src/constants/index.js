@@ -22,6 +22,7 @@ import {
 	carrent,
 	jobit,
 	tripguide,
+	iremedy,
 	Charts_heatMaps,
 	threejs,
 } from '../assets';
@@ -212,7 +213,14 @@ const projects = [
 		image: jobit,
 		source_code_link: 'https://www.nahno.org/',
 	},
-	,
+	{
+		name: 'iremedy',
+		description: `Our platform seamlessly connects patients, providers, governments, and manufacturers, offering direct access to a range of high-quality healthcare products, we are committed to creating efficiencies, and fostering a resilient national medical supply chain`,
+		tags: [],
+		image: iremedy,
+		source_code_link: 'https://iremedy.com/',
+	},
+
 	{
 		name: 'Charts-heatMaps',
 		description:

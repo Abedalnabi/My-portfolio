@@ -28,6 +28,8 @@ import tesla from './company/insan-w-alat.jpg';
 
 import carrent from './alhusseinvolunteeraward.png';
 import jobit from './nahno.png';
+import iremedy from './iremedy.png';
+
 import Charts_heatMaps from './Charts-heatMaps.png';
 
 import tripguide from './tripguide.png';
@@ -62,4 +64,5 @@ export {
 	jobit,
 	Charts_heatMaps,
 	tripguide,
+	iremedy,
 };

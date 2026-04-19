@@ -120,13 +120,29 @@ const technologies = [
 	},
 ];
 
-const experiences = [
+const experiences = [{
+		title: 'Frontend Engineer',
+		company_name: 'ICS Jordan',
+		icon: "",
+		iconBg: '#383E56',
+		date: 'Aug 2025- Current',
+		points: [
+		'Developed and maintained scalable front-end applications using React.js, focusing on reusable components and clean architecture.',
+		'Implemented advanced state management solutions using Redux and Context API to handle complex application logic.',
+		'Optimized application performance through techniques such as lazy loading, code splitting, and memoization.',
+		'Integrated RESTful APIs and backend services, ensuring efficient data handling using async/await and promises.',
+		'Built responsive and user-friendly interfaces using modern CSS techniques including Flexbox and Grid.',
+		'Applied web security best practices, including handling CORS, preventing XSS/CSRF vulnerabilities, and implementing JWT authentication.',
+		'Collaborated with cross-functional teams in agile environments, participating in code reviews and continuous improvement processes.',
+		'Ensured accessibility and cross-browser compatibility by following WCAG standards and best practices.',
+	]
+	},
 	{
 		title: 'Project consultant (Full-time)',
 		company_name: 'UNICEF',
 		icon: starbucks,
 		iconBg: '#383E56',
-		date: 'Jul 2023- Feb 2025',
+		date: 'Jul 2023- July 2025',
 		points: [
 			'Enhanced user experiences through dynamic and responsive front-end development: built interfaces using React.js, ensuring accessibility and responsiveness.',
 			'Collaborated with cross-functional teams: aligned technical solutions with product goals and delivered seamless integration with backend systems.',
@@ -201,6 +217,7 @@ const testimonials = [
 ];
 
 const projects = [
+	
 	{
 		name: 'alhussein volunteer award',
 		description:

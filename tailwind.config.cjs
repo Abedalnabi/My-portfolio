@@ -11,6 +11,12 @@ module.exports = {
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
+        accent: "#915EFF",
+        "accent-2": "#22d3ee",
+      },
+      fontFamily: {
+        display: ['"Space Grotesk"', "Manrope", "sans-serif"],
+        body: ["Manrope", "system-ui", "sans-serif"],
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",

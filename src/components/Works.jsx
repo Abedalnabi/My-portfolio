@@ -3,43 +3,47 @@ import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles';
-import { github } from '../assets';
 import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
+import { ExternalIcon } from './Icons';
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
 	return (
-		<motion.div
-			variants={fadeIn('up', 'spring', index * 0.5, 0.75)}
-			onClick={() => window.open(source_code_link, '_blank')}
-			className="cursor-pointer"
-		>
-			<Tilt
-				options={{
-					max: 45,
-					scale: 1,
-					speed: 450,
-				}}
-				className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-				style={{ minHeight: '500px' }}
-			>
-				<div className="relative w-full h-[230px]">
-					<img src={image} alt="project_image" className="w-full h-full object-cover rounded-2xl" />
-				</div>
+		<motion.div variants={fadeIn('up', 'spring', index * 0.25, 0.75)} className="h-full">
+			<Tilt tiltMaxAngleX={6} tiltMaxAngleY={6} className="h-full">
+				<a
+					href={source_code_link}
+					target="_blank"
+					rel="noreferrer"
+					className="group card card-hover h-full p-4 flex flex-col"
+				>
+					<div className="relative w-full h-[220px] overflow-hidden rounded-2xl">
+						<img
+							src={image}
+							alt={`${name} screenshot`}
+							loading="lazy"
+							className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+						/>
+						<div className="absolute inset-0 bg-gradient-to-t from-[#0b0820] via-transparent to-transparent opacity-80" />
+						<span className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur px-3 py-1.5 text-[12px] font-semibold text-white opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+							Visit site <ExternalIcon width={14} height={14} />
+						</span>
+					</div>
 
-				<div className="mt-5">
-					<h3 className="text-white font-bold text-[24px]">{name}</h3>
-					<p className="mt-2 text-secondary text-[14px]">{description}</p>
-				</div>
+					<div className="mt-5 px-2 flex-1">
+						<h3 className="text-white font-bold text-[22px] group-hover:text-[#d9ccff] transition-colors">{name}</h3>
+						<p className="mt-2 text-secondary text-[14.5px] leading-[24px] line-clamp-4">{description}</p>
+					</div>
 
-				<div className="mt-4 flex flex-wrap gap-2">
-					{tags.map((tag) => (
-						<p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
-							#{tag.name}
-						</p>
-					))}
-				</div>
+					<div className="mt-5 px-2 pb-2 flex flex-wrap gap-2">
+						{tags.map((tag) => (
+							<span key={`${name}-${tag}`} className="chip !text-[12px] !py-1.5">
+								#{tag}
+							</span>
+						))}
+					</div>
+				</a>
 			</Tilt>
 		</motion.div>
 	);
@@ -53,15 +57,12 @@ const Works = () => {
 				<h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
 			</motion.div>
 
-			<div className="w-full flex">
-				<motion.p variants={fadeIn('', '', 0.1, 1)} className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
-					The following projects showcase real-world products I have worked on. Each card links to the live site and
-					reflects my ability to solve complex problems, work across different technologies, and deliver with
-					cross-functional teams.
-				</motion.p>
-			</div>
+			<motion.p variants={fadeIn('', '', 0.1, 1)} className="mt-4 text-[#c3bede] text-[17px] max-w-3xl leading-[30px]">
+				Real-world products I have worked on. Each card links to the live site and reflects my ability to solve complex
+				problems, work across different technologies, and deliver with cross-functional teams.
+			</motion.p>
 
-			<div className="mt-20 flex flex-wrap gap-7">
+			<div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 				{projects.map((project, index) => (
 					<ProjectCard key={`project-${index}`} index={index} {...project} />
 				))}

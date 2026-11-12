@@ -240,39 +240,52 @@ const testimonials = [
 ];
 
 const projects = [
-	
 	{
-		name: 'alhussein volunteer award',
+		name: 'Al Hussein Volunteer Award',
 		description:
-			'The Al Hussein Bin Abdullah II Award for Voluntary Work aims to promote the culture of volunteerism in Jordan and honor individuals and institutions for their contributions to voluntary work.',
-		tags: [],
+			'The Al Hussein Bin Abdullah II Award for Voluntary Work promotes the culture of volunteerism in Jordan and honors individuals and institutions for their contributions to voluntary work.',
+		tags: ['Web platform', 'Jordan'],
 		image: carrent,
 		source_code_link: 'https://alhusseinvolunteeraward.jo/',
 	},
 	{
 		name: 'Nahno',
 		description:
-			'Nahno.org connects volunteers with community initiatives in the Arab world, facilitating collaboration between individuals and organizations to drive social impact. It aims to boost volunteerism and community engagement.   ',
-		tags: [],
+			'Nahno.org connects volunteers with community initiatives in the Arab world, bringing individuals and organizations together to drive social impact and community engagement.',
+		tags: ['Volunteering', 'Arab world'],
 		image: jobit,
 		source_code_link: 'https://www.nahno.org/',
 	},
 	{
-		name: 'iremedy',
-		description: `Our platform seamlessly connects patients, providers, governments, and manufacturers, offering direct access to a range of high-quality healthcare products, we are committed to creating efficiencies, and fostering a resilient national medical supply chain`,
-		tags: [],
+		name: 'iRemedy',
+		description:
+			'A platform that connects patients, providers, governments, and manufacturers with direct access to high-quality healthcare products, building a resilient national medical supply chain.',
+		tags: ['Healthcare', 'E-commerce', 'USA'],
 		image: iremedy,
 		source_code_link: 'https://iremedy.com/',
 	},
-
 	{
-		name: 'Charts-heatMaps',
+		name: 'Charts & Heat Maps',
 		description:
-			'Charts and heat-maps are visual tools used to display data in a clear and concise way. They come in different types and are commonly used in business, science, and other fields.',
-		tags: [],
+			'An interactive data-visualization app that turns datasets into clear charts and heat maps, deployed on AWS Amplify.',
+		tags: ['Data viz', 'AWS Amplify'],
 		image: Charts_heatMaps,
 		source_code_link: 'https://main.d3lelljq56c044.amplifyapp.com/',
 	},
 ];
 
-export { services, technologies, skillGroups, experiences, education, languages, testimonials, projects };
+const contact = {
+	email: 'mo.alnabale98@gmail.com',
+	phone: '+962 789 814 895',
+	phoneHref: 'tel:+962789814895',
+	linkedin: 'https://www.linkedin.com/in/mohammad-alnabalebe/',
+	location: 'Amman, Jordan',
+};
+
+const stats = [
+	{ value: '4+', label: 'Years building for the web' },
+	{ value: '4', label: 'Companies & organizations' },
+	{ value: '2', label: 'Countries: Jordan & the US' },
+];
+
+export { services, technologies, skillGroups, experiences, education, languages, testimonials, projects, contact, stats };

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 import { BallCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
-import { technologies } from '../constants';
+import { technologies, skillGroups } from '../constants';
 import { styles } from '../styles';
-import { textVariant } from '../utils/motion';
+import { fadeIn, textVariant } from '../utils/motion';
 
 const Tech = () => {
 	return (
@@ -22,6 +22,28 @@ const Tech = () => {
 					<div className="w-28 h-28" key={technology.name}>
 						<BallCanvas icon={technology.icon} />
 					</div>
+				))}
+			</div>
+
+			<div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				{skillGroups.map((group, index) => (
+					<motion.div
+						key={group.title}
+						variants={fadeIn('up', 'spring', index * 0.15, 0.75)}
+						className="bg-tertiary rounded-2xl p-6"
+					>
+						<h3 className="text-white text-[18px] font-bold">{group.title}</h3>
+						<div className="mt-4 flex flex-wrap gap-2">
+							{group.skills.map((skill) => (
+								<span
+									key={skill}
+									className="text-[13px] text-white-100 bg-black-200 border border-[#915EFF]/40 rounded-full px-3 py-1"
+								>
+									{skill}
+								</span>
+							))}
+						</div>
+					</motion.div>
 				))}
 			</div>
 		</>

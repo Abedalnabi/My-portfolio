@@ -43,7 +43,7 @@ const Navbar = () => {
 					<img src={logo} alt="logo" className="w-9 h-9 object-contain" />
 					<p className="text-white text-[18px] font-bold cursor-pointer flex ">
 						Mohammad Abedalnabi &nbsp;
-						<span className="sm:block hidden"> | Full-stack Developer</span>
+						<span className="lg:block hidden"> | Full Stack &amp; AI Engineer</span>
 					</p>
 				</Link>
 

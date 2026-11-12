@@ -15,13 +15,11 @@ import {
 	git,
 	figma,
 	docker,
-	meta,
 	starbucks,
 	tesla,
 	shopify,
 	carrent,
 	jobit,
-	tripguide,
 	iremedy,
 	Charts_heatMaps,
 	threejs,
@@ -48,149 +46,174 @@ export const navLinks = [
 
 const services = [
 	{
-		title: 'Web Developer',
+		title: 'AI Engineer',
+		description: 'LLM integration, RAG pipelines, AI agents and document intelligence in production.',
+		icon: creator,
+	},
+	{
+		title: 'Full Stack Developer',
+		description: 'End-to-end web apps with React.js, Node.js, NestJS, MySQL and MongoDB.',
 		icon: web,
 	},
 	{
-		title: 'Frontend Developer',
-		icon: mobile,
-	},
-	{
-		title: 'Backend Developer',
+		title: 'Backend & APIs',
+		description: 'REST and GraphQL APIs, streaming, caching, rate limiting, Docker and AWS.',
 		icon: backend,
 	},
 	{
-		title: 'Full stack Developer',
-		icon: creator,
+		title: 'Technical Consultant',
+		description: 'Requirements analysis, system integration and stakeholder coordination.',
+		icon: mobile,
 	},
 ];
 
 const technologies = [
+	{ name: 'HTML 5', icon: html },
+	{ name: 'CSS 3', icon: css },
+	{ name: 'JavaScript', icon: javascript },
+	{ name: 'TypeScript', icon: typescript },
+	{ name: 'React JS', icon: reactjs },
+	{ name: 'Redux Toolkit', icon: redux },
+	{ name: 'Tailwind CSS', icon: tailwind },
+	{ name: 'Node JS', icon: nodejs },
+	{ name: 'MongoDB', icon: mongodb },
+	{ name: 'Three JS', icon: threejs },
+	{ name: 'git', icon: git },
+	{ name: 'figma', icon: figma },
+	{ name: 'docker', icon: docker },
+];
+
+const skillGroups = [
 	{
-		name: 'HTML 5',
-		icon: html,
+		title: 'AI & LLMs',
+		skills: [
+			'LLM Integration (OpenAI, Anthropic Claude)',
+			'RAG',
+			'Embeddings',
+			'Vector Databases',
+			'AI Agents',
+			'Function Calling',
+			'Prompt Engineering',
+			'LLM Evaluation',
+		],
 	},
 	{
-		name: 'CSS 3',
-		icon: css,
+		title: 'Frontend',
+		skills: ['React.js', 'Vue.js', 'Redux', 'JavaScript', 'HTML5', 'CSS3'],
 	},
 	{
-		name: 'JavaScript',
-		icon: javascript,
+		title: 'Backend',
+		skills: ['Node.js', 'Express.js', 'NestJS', 'PHP', 'RESTful APIs', 'GraphQL'],
 	},
 	{
-		name: 'TypeScript',
-		icon: typescript,
+		title: 'Databases',
+		skills: ['MySQL', 'MongoDB'],
 	},
 	{
-		name: 'React JS',
-		icon: reactjs,
+		title: 'Cloud & DevOps',
+		skills: ['AWS (Lightsail, Amplify, S3)', 'Docker', 'Git', 'CI/CD'],
 	},
 	{
-		name: 'Redux Toolkit',
-		icon: redux,
-	},
-	{
-		name: 'Tailwind CSS',
-		icon: tailwind,
-	},
-	{
-		name: 'Node JS',
-		icon: nodejs,
-	},
-	{
-		name: 'MongoDB',
-		icon: mongodb,
-	},
-	{
-		name: 'Three JS',
-		icon: threejs,
-	},
-	{
-		name: 'git',
-		icon: git,
-	},
-	{
-		name: 'figma',
-		icon: figma,
-	},
-	{
-		name: 'docker',
-		icon: docker,
+		title: 'Professional',
+		skills: [
+			'Requirements Analysis',
+			'Stakeholder Management',
+			'Technical Documentation',
+			'Code Reviews',
+			'Testing & Debugging',
+			'Performance Optimization',
+			'UI/UX Design',
+		],
 	},
 ];
 
-const experiences = [{
-		title: 'Frontend Engineer',
-		company_name: 'ICS Jordan',
-		icon: "",
-		iconBg: '#383E56',
-		date: 'Aug 2025- Current',
+const experiences = [
+	{
+		title: 'Software Engineer (AI Engineer)',
+		company_name: 'ICS Jo',
+		location: 'Amman, Jordan',
+		icon: '',
+		iconText: 'ICS',
+		iconBg: '#915EFF',
+		date: 'Jun 2025 – Present',
 		points: [
-		'Developed and maintained scalable front-end applications using React.js, focusing on reusable components and clean architecture.',
-		'Implemented advanced state management solutions using Redux and Context API to handle complex application logic.',
-		'Optimized application performance through techniques such as lazy loading, code splitting, and memoization.',
-		'Integrated RESTful APIs and backend services, ensuring efficient data handling using async/await and promises.',
-		'Built responsive and user-friendly interfaces using modern CSS techniques including Flexbox and Grid.',
-		'Applied web security best practices, including handling CORS, preventing XSS/CSRF vulnerabilities, and implementing JWT authentication.',
-		'Collaborated with cross-functional teams in agile environments, participating in code reviews and continuous improvement processes.',
-		'Ensured accessibility and cross-browser compatibility by following WCAG standards and best practices.',
-	]
+			'Full-Stack Engineering: built and maintained end-to-end web applications using React.js, Node.js, NestJS, and SQL/NoSQL databases, delivering the interfaces and APIs behind AI-powered features.',
+			'LLM Integration: integrated Large Language Models (OpenAI GPT, Anthropic Claude) into production applications to power chat assistants, summarization, and content generation.',
+			'RAG Pipelines: designed Retrieval-Augmented Generation pipelines with embeddings and vector databases, grounding AI responses in company and client data to improve accuracy.',
+			'AI Agents & Automation: developed AI agents using function calling and tool use to automate multi-step business workflows.',
+			'Prompt Engineering & Evaluation: designed, tested, and versioned prompts, and built evaluation datasets to measure output quality before each release.',
+			'Document Intelligence: built pipelines that extract structured data from PDFs and scanned documents by combining OCR with LLMs.',
+			'Scalable AI Services: implemented response streaming, caching, rate limiting, and token-cost monitoring for AI backend services.',
+			'Deployment: containerized and deployed AI services with Docker on AWS using CI/CD pipelines.',
+		],
 	},
 	{
-		title: 'Project consultant (Full-time)',
+		title: 'Project Consultant',
 		company_name: 'UNICEF',
+		location: 'Amman, Jordan',
 		icon: starbucks,
 		iconBg: '#383E56',
-		date: 'Jul 2023- July 2025',
+		date: 'Jul 2023 – May 2025',
 		points: [
-			'Enhanced user experiences through dynamic and responsive front-end development: built interfaces using React.js, ensuring accessibility and responsiveness.',
-			'Collaborated with cross-functional teams: aligned technical solutions with product goals and delivered seamless integration with backend systems.',
-			'Improved application performance: optimized loading times, implemented code improvements, and adhered to industry best practices.',
-			'Developed backend solutions and APIs: utilized Node.js and MySQL to build efficient and secure server-side applications.',
-			'Applied UI/UX principles to real-world projects: crafted intuitive, visually appealing interfaces focused on enhancing usability.',
-			'Mastered scalable web application development: participated in intensive training on backend systems, RESTful APIs, and database management.',
+			'System Integration: led the integration of new systems with existing infrastructure, ensuring interoperability and improving operational efficiency.',
+			'Requirements Analysis: gathered and analyzed requirements from program teams and stakeholders, translating them into technical specifications and project deliverables.',
+			'Project Coordination: coordinated with internal teams, implementing partners, and vendors to plan timelines, track progress, and deliver projects on schedule.',
+			'UI/UX Enhancements: conducted user research and recommended data-driven UI/UX improvements that significantly increased user satisfaction.',
+			'Database Optimization: advised on database structure and query optimization to improve application performance and scalability.',
+			'Documentation & Reporting: prepared technical documentation, progress reports, and presentations for stakeholders and management.',
+			'Training and Support: delivered end-user training sessions and provided ongoing support to resolve complex system issues.',
 		],
 	},
 	{
-		title: ' Full Stack Developer (Full-time)',
-		company_name: ' Insan W Alat',
-		icon: tesla,
-		iconBg: '#E6DEDD',
-		date: ' Feb 2022- Mar 2023',
-		points: [
-			'Built and maintained full-stack web applications: utilized technologies such as React.js, Vue.js, Node.js, MySQL, and MongoDB.',
-			'Streamlined service communication: designed and implemented robust RESTful APIs for seamless interaction between systems.',
-			'Ensured high code quality and maintainability: conducted rigorous code reviews, debugging, and testing to adhere to best practices.',
-		],
-	},
-	{
-		title: 'Full-stack Developer (Part-time)',
-		company_name: 'CBM integrated software Inc. ',
+		title: 'Full Stack Developer',
+		company_name: 'CBM Integrated Software Inc.',
+		location: 'California, USA (Remote)',
 		icon: shopify,
-		iconBg: '#383E56',
-		date: 'Jul 2022 - Oct 2023',
+		iconBg: '#E6DEDD',
+		date: 'Jul 2022 – Oct 2023',
 		points: [
-			'Enhanced user experiences through dynamic and responsive front-end development: built interfaces using React.js, ensuring accessibility and responsiveness.',
-			'Collaborated with cross-functional teams: aligned technical solutions with product goals and delivered seamless integration with backend systems.',
-			'Improved application performance: optimized loading times, implemented code improvements, and adhered to industry best practices.',
-			'Applied UI/UX principles to real-world projects: crafted intuitive, visually appealing interfaces focused on enhancing usability.',
-			'Mastered scalable web application development: participated in intensive training on backend systems, RESTful APIs, and database management.',
+			'Frontend Development: developed dynamic, responsive user interfaces using React.js.',
+			'Backend Development: built RESTful and GraphQL APIs with Node.js and MySQL.',
+			'Performance Optimization: optimized code and assets to improve application performance and page load times.',
+			'Team Collaboration: collaborated with product managers, backend developers, and designers to align project goals and deliver a seamless user experience.',
+			'Code Quality: maintained coding standards through code reviews and testing.',
+			"Reverse Engineering: reverse-engineered ProtonMail's mail client to support rebranding and customization.",
 		],
 	},
 	{
-		title: 'Software Engineer (Full-time)',
-		company_name: 'myKloud ',
-		icon: meta,
-		iconBg: '#E6DEDD',
-		date: 'Nov 2021 - Feb 2022',
+		title: 'Full Stack Developer',
+		company_name: 'Insan W Alat',
+		location: 'Amman, Jordan',
+		icon: tesla,
+		iconBg: '#383E56',
+		date: 'Feb 2022 – Mar 2023',
 		points: [
-			'Developed responsive and scalable front-end interfaces: created high-performance UIs using React.js, tailored to user needs.',
-			'Delivered secure and efficient backend solutions: worked on Java Spring Boot to develop scalable and reliable systems.',
-			'Enhanced product capabilities through reverse engineering: customized and rebranded ProtonMails client interface while solving complex technical challenges.',
+			'Full-Stack Development: built and maintained full-stack web applications using React.js, Vue.js, Node.js, PHP, MySQL, and MongoDB.',
+			'API Development: designed and implemented RESTful APIs to enable communication between services.',
+			'State Management: managed application state with Redux to improve scalability.',
+			'Code Quality and Reviews: conducted code reviews to keep the codebase clean, maintainable, and aligned with best practices.',
 		],
 	},
 ];
+
+const education = [
+	{
+		title: 'Full-Stack Development Bootcamp',
+		school: 'Meraki Academy',
+		location: 'Amman, Jordan',
+		date: 'Mar 2021 – Oct 2021',
+		note: 'Completed 1,000+ hours of hands-on training in full-stack web development.',
+	},
+	{
+		title: "Bachelor's Degree in Finance",
+		school: 'The Hashemite University',
+		location: 'Zarqa, Jordan',
+		date: '2015 – 2019',
+		note: '',
+	},
+];
+
+const languages = ['Arabic (Native)', 'English (Professional Working Proficiency)'];
 
 const testimonials = [
 	{
@@ -252,4 +275,4 @@ const projects = [
 	},
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, skillGroups, experiences, education, languages, testimonials, projects };

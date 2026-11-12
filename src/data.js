@@ -1,73 +1,84 @@
-import {
-	mobile,
-	backend,
-	creator,
-	web,
-	javascript,
-	typescript,
-	html,
-	css,
-	reactjs,
-	redux,
-	tailwind,
-	nodejs,
-	mongodb,
-	git,
-	figma,
-	docker,
-	starbucks,
-	tesla,
-	shopify,
-	carrent,
-	jobit,
-	iremedy,
-	Charts_heatMaps,
-	threejs,
-} from '../assets';
+import iconAi from './assets/creator.png';
+import iconWeb from './assets/web.png';
+import iconBackend from './assets/backend.png';
+import iconConsult from './assets/mobile.png';
+
+import html from './assets/tech/html.png';
+import css from './assets/tech/css.png';
+import javascript from './assets/tech/javascript.png';
+import typescript from './assets/tech/typescript.png';
+import reactjs from './assets/tech/reactjs.png';
+import redux from './assets/tech/redux.png';
+import tailwind from './assets/tech/tailwind.png';
+import nodejs from './assets/tech/nodejs.png';
+import mongodb from './assets/tech/mongodb.png';
+import threejs from './assets/tech/threejs.svg';
+import git from './assets/tech/git.png';
+import figma from './assets/tech/figma.png';
+import docker from './assets/tech/docker.png';
+
+import unicefLogo from './assets/company/unicef.png';
+import cbmisLogo from './assets/company/CBMIS.png';
+import insanLogo from './assets/company/insan-w-alat.jpg';
+
+import husseinAwardShot from './assets/alhusseinvolunteeraward.png';
+import nahnoShot from './assets/nahno.png';
+import iremedyShot from './assets/iremedy.png';
+import chartsShot from './assets/Charts-heatMaps.png';
+
+export const profile = {
+	name: 'Mohammad Abedalnabi',
+	firstName: 'Mohammad',
+	initials: 'MA',
+	role: 'Full Stack & AI Engineer',
+	currently: 'AI Engineer at ICS Jo',
+	tagline:
+		'I build scalable web apps with React, Node.js and NestJS, and bring LLMs into production with RAG, AI agents and document intelligence.',
+	about: [
+		'I’m a Full Stack & AI Engineer with 4+ years of experience building scalable web applications with React.js, Node.js, NestJS, MySQL and MongoDB.',
+		'Today I integrate Large Language Models into production through RAG pipelines, AI agents and document intelligence.',
+		'I also bring consulting experience with UNICEF on requirements, system integration and stakeholder coordination, and a track record of delivering with cross-functional teams in Jordan and the US.',
+	],
+};
 
 export const navLinks = [
-	{
-		id: 'about',
-		title: 'About',
-	},
-	{
-		id: 'work',
-		title: 'Experience',
-	},
-	{
-		id: 'projects',
-		title: 'Projects',
-	},
-	{
-		id: 'contact',
-		title: 'Contact',
-	},
+	{ id: 'about', title: 'About' },
+	{ id: 'work', title: 'Experience' },
+	{ id: 'projects', title: 'Projects' },
+	{ id: 'skills', title: 'Skills' },
+	{ id: 'contact', title: 'Contact' },
 ];
 
-const services = [
+export const stats = [
+	{ value: '4+', label: 'Years building for the web' },
+	{ value: '4', label: 'Companies & organizations' },
+	{ value: '2', label: 'Countries: Jordan & the US' },
+];
+
+export const services = [
 	{
 		title: 'AI Engineer',
 		description: 'LLM integration, RAG pipelines, AI agents and document intelligence in production.',
-		icon: creator,
+		icon: iconAi,
 	},
 	{
 		title: 'Full Stack Developer',
 		description: 'End-to-end web apps with React.js, Node.js, NestJS, MySQL and MongoDB.',
-		icon: web,
+		icon: iconWeb,
 	},
 	{
 		title: 'Backend & APIs',
 		description: 'REST and GraphQL APIs, streaming, caching, rate limiting, Docker and AWS.',
-		icon: backend,
+		icon: iconBackend,
 	},
 	{
 		title: 'Technical Consultant',
 		description: 'Requirements analysis, system integration and stakeholder coordination.',
-		icon: mobile,
+		icon: iconConsult,
 	},
 ];
 
-const technologies = [
+export const technologies = [
 	{ name: 'HTML 5', icon: html },
 	{ name: 'CSS 3', icon: css },
 	{ name: 'JavaScript', icon: javascript },
@@ -78,12 +89,12 @@ const technologies = [
 	{ name: 'Node JS', icon: nodejs },
 	{ name: 'MongoDB', icon: mongodb },
 	{ name: 'Three JS', icon: threejs },
-	{ name: 'git', icon: git },
-	{ name: 'figma', icon: figma },
-	{ name: 'docker', icon: docker },
+	{ name: 'Git', icon: git },
+	{ name: 'Figma', icon: figma },
+	{ name: 'Docker', icon: docker },
 ];
 
-const skillGroups = [
+export const skillGroups = [
 	{
 		title: 'AI & LLMs',
 		skills: [
@@ -97,22 +108,10 @@ const skillGroups = [
 			'LLM Evaluation',
 		],
 	},
-	{
-		title: 'Frontend',
-		skills: ['React.js', 'Vue.js', 'Redux', 'JavaScript', 'HTML5', 'CSS3'],
-	},
-	{
-		title: 'Backend',
-		skills: ['Node.js', 'Express.js', 'NestJS', 'PHP', 'RESTful APIs', 'GraphQL'],
-	},
-	{
-		title: 'Databases',
-		skills: ['MySQL', 'MongoDB'],
-	},
-	{
-		title: 'Cloud & DevOps',
-		skills: ['AWS (Lightsail, Amplify, S3)', 'Docker', 'Git', 'CI/CD'],
-	},
+	{ title: 'Frontend', skills: ['React.js', 'Vue.js', 'Redux', 'JavaScript', 'HTML5', 'CSS3'] },
+	{ title: 'Backend', skills: ['Node.js', 'Express.js', 'NestJS', 'PHP', 'RESTful APIs', 'GraphQL'] },
+	{ title: 'Databases', skills: ['MySQL', 'MongoDB'] },
+	{ title: 'Cloud & DevOps', skills: ['AWS (Lightsail, Amplify, S3)', 'Docker', 'Git', 'CI/CD'] },
 	{
 		title: 'Professional',
 		skills: [
@@ -127,14 +126,14 @@ const skillGroups = [
 	},
 ];
 
-const experiences = [
+export const experiences = [
 	{
 		title: 'Software Engineer (AI Engineer)',
-		company_name: 'ICS Jo',
+		company: 'ICS Jo',
+		short: 'ICS Jo',
 		location: 'Amman, Jordan',
-		icon: '',
-		iconText: 'ICS',
-		iconBg: '#915EFF',
+		logo: null,
+		logoText: 'ICS',
 		date: 'Jun 2025 – Present',
 		points: [
 			'Full-Stack Engineering: built and maintained end-to-end web applications using React.js, Node.js, NestJS, and SQL/NoSQL databases, delivering the interfaces and APIs behind AI-powered features.',
@@ -149,10 +148,10 @@ const experiences = [
 	},
 	{
 		title: 'Project Consultant',
-		company_name: 'UNICEF',
+		company: 'UNICEF',
+		short: 'UNICEF',
 		location: 'Amman, Jordan',
-		icon: starbucks,
-		iconBg: '#383E56',
+		logo: unicefLogo,
 		date: 'Jul 2023 – May 2025',
 		points: [
 			'System Integration: led the integration of new systems with existing infrastructure, ensuring interoperability and improving operational efficiency.',
@@ -166,10 +165,10 @@ const experiences = [
 	},
 	{
 		title: 'Full Stack Developer',
-		company_name: 'CBM Integrated Software Inc.',
+		company: 'CBM Integrated Software Inc.',
+		short: 'CBMIS',
 		location: 'California, USA (Remote)',
-		icon: shopify,
-		iconBg: '#E6DEDD',
+		logo: cbmisLogo,
 		date: 'Jul 2022 – Oct 2023',
 		points: [
 			'Frontend Development: developed dynamic, responsive user interfaces using React.js.',
@@ -182,10 +181,10 @@ const experiences = [
 	},
 	{
 		title: 'Full Stack Developer',
-		company_name: 'Insan W Alat',
+		company: 'Insan W Alat',
+		short: 'Insan W Alat',
 		location: 'Amman, Jordan',
-		icon: tesla,
-		iconBg: '#383E56',
+		logo: insanLogo,
 		date: 'Feb 2022 – Mar 2023',
 		points: [
 			'Full-Stack Development: built and maintained full-stack web applications using React.js, Vue.js, Node.js, PHP, MySQL, and MongoDB.',
@@ -196,7 +195,42 @@ const experiences = [
 	},
 ];
 
-const education = [
+export const projects = [
+	{
+		name: 'Al Hussein Volunteer Award',
+		description:
+			'The Al Hussein Bin Abdullah II Award for Voluntary Work promotes the culture of volunteerism in Jordan and honors individuals and institutions for their contributions to voluntary work.',
+		tags: ['Web platform', 'Jordan'],
+		image: husseinAwardShot,
+		link: 'https://alhusseinvolunteeraward.jo/',
+	},
+	{
+		name: 'Nahno',
+		description:
+			'Nahno.org connects volunteers with community initiatives in the Arab world, bringing individuals and organizations together to drive social impact and community engagement.',
+		tags: ['Volunteering', 'Arab world'],
+		image: nahnoShot,
+		link: 'https://www.nahno.org/',
+	},
+	{
+		name: 'iRemedy',
+		description:
+			'A platform that connects patients, providers, governments, and manufacturers with direct access to high-quality healthcare products, building a resilient national medical supply chain.',
+		tags: ['Healthcare', 'E-commerce', 'USA'],
+		image: iremedyShot,
+		link: 'https://iremedy.com/',
+	},
+	{
+		name: 'Charts & Heat Maps',
+		description:
+			'An interactive data-visualization app that turns datasets into clear charts and heat maps, deployed on AWS Amplify.',
+		tags: ['Data viz', 'AWS Amplify'],
+		image: chartsShot,
+		link: 'https://main.d3lelljq56c044.amplifyapp.com/',
+	},
+];
+
+export const education = [
 	{
 		title: 'Full-Stack Development Bootcamp',
 		school: 'Meraki Academy',
@@ -213,68 +247,9 @@ const education = [
 	},
 ];
 
-const languages = ['Arabic (Native)', 'English (Professional Working Proficiency)'];
+export const languages = ['Arabic (Native)', 'English (Professional Working Proficiency)'];
 
-const testimonials = [
-	{
-		testimonial: 'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
-		name: 'Sara Lee',
-		designation: 'CFO',
-		company: 'Acme Co',
-		image: 'https://randomuser.me/api/portraits/women/4.jpg',
-	},
-	{
-		testimonial: "I've never met a web developer who truly cares about their clients' success like Rick does.",
-		name: 'Chris Brown',
-		designation: 'COO',
-		company: 'DEF Corp',
-		image: 'https://randomuser.me/api/portraits/men/5.jpg',
-	},
-	{
-		testimonial: "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-		name: 'Lisa Wang',
-		designation: 'CTO',
-		company: '456 Enterprises',
-		image: 'https://randomuser.me/api/portraits/women/6.jpg',
-	},
-];
-
-const projects = [
-	{
-		name: 'Al Hussein Volunteer Award',
-		description:
-			'The Al Hussein Bin Abdullah II Award for Voluntary Work promotes the culture of volunteerism in Jordan and honors individuals and institutions for their contributions to voluntary work.',
-		tags: ['Web platform', 'Jordan'],
-		image: carrent,
-		source_code_link: 'https://alhusseinvolunteeraward.jo/',
-	},
-	{
-		name: 'Nahno',
-		description:
-			'Nahno.org connects volunteers with community initiatives in the Arab world, bringing individuals and organizations together to drive social impact and community engagement.',
-		tags: ['Volunteering', 'Arab world'],
-		image: jobit,
-		source_code_link: 'https://www.nahno.org/',
-	},
-	{
-		name: 'iRemedy',
-		description:
-			'A platform that connects patients, providers, governments, and manufacturers with direct access to high-quality healthcare products, building a resilient national medical supply chain.',
-		tags: ['Healthcare', 'E-commerce', 'USA'],
-		image: iremedy,
-		source_code_link: 'https://iremedy.com/',
-	},
-	{
-		name: 'Charts & Heat Maps',
-		description:
-			'An interactive data-visualization app that turns datasets into clear charts and heat maps, deployed on AWS Amplify.',
-		tags: ['Data viz', 'AWS Amplify'],
-		image: Charts_heatMaps,
-		source_code_link: 'https://main.d3lelljq56c044.amplifyapp.com/',
-	},
-];
-
-const contact = {
+export const contact = {
 	email: 'mo.alnabale98@gmail.com',
 	phone: '+962 789 814 895',
 	phoneHref: 'tel:+962789814895',
@@ -282,10 +257,9 @@ const contact = {
 	location: 'Amman, Jordan',
 };
 
-const stats = [
-	{ value: '4+', label: 'Years building for the web' },
-	{ value: '4', label: 'Companies & organizations' },
-	{ value: '2', label: 'Countries: Jordan & the US' },
-];
-
-export { services, technologies, skillGroups, experiences, education, languages, testimonials, projects, contact, stats };
+// EmailJS settings used by the contact form.
+export const emailjsConfig = {
+	serviceId: 'service_p17g7id',
+	templateId: 'template_s2yip3e',
+	publicKey: 'Z3UUHG4al2c8Ilro9',
+};

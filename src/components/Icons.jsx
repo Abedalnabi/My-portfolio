@@ -1,6 +1,6 @@
-const base = {
-	width: 20,
-	height: 20,
+const base = (props) => ({
+	width: 18,
+	height: 18,
 	viewBox: '0 0 24 24',
 	fill: 'none',
 	stroke: 'currentColor',
@@ -8,60 +8,75 @@ const base = {
 	strokeLinecap: 'round',
 	strokeLinejoin: 'round',
 	'aria-hidden': true,
-};
+	...props,
+});
 
-export const MailIcon = (props) => (
-	<svg {...base} {...props}>
+export const FilesIcon = (p) => (
+	<svg {...base(p)}>
+		<path d="M14 3H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7z" />
+		<path d="M14 3v4h4M9 21h8a2 2 0 0 0 2-2V9" />
+	</svg>
+);
+export const SearchIcon = (p) => (
+	<svg {...base(p)}>
+		<circle cx="11" cy="11" r="7" />
+		<path d="m20 20-3.5-3.5" />
+	</svg>
+);
+export const TerminalIcon = (p) => (
+	<svg {...base(p)}>
+		<rect x="3" y="4" width="18" height="16" rx="2" />
+		<path d="m7 9 3 3-3 3M13 15h4" />
+	</svg>
+);
+export const BranchIcon = (p) => (
+	<svg {...base(p)}>
+		<circle cx="6" cy="5" r="2" />
+		<circle cx="6" cy="19" r="2" />
+		<circle cx="18" cy="7" r="2" />
+		<path d="M6 7v10M18 9c0 5-6 4-12 8" />
+	</svg>
+);
+export const CloseIcon = (p) => (
+	<svg {...base(p)}>
+		<path d="M6 6l12 12M18 6 6 18" />
+	</svg>
+);
+export const MenuIcon = (p) => (
+	<svg {...base(p)}>
+		<path d="M4 7h16M4 12h16M4 17h16" />
+	</svg>
+);
+export const ChevronIcon = (p) => (
+	<svg {...base(p)}>
+		<path d="m9 6 6 6-6 6" />
+	</svg>
+);
+export const PlayIcon = (p) => (
+	<svg {...base({ ...p, fill: 'currentColor', stroke: 'none' })}>
+		<path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5Z" />
+	</svg>
+);
+export const MailIcon = (p) => (
+	<svg {...base(p)}>
 		<rect x="3" y="5" width="18" height="14" rx="2" />
 		<path d="m3 7 9 6 9-6" />
 	</svg>
 );
-
-export const PhoneIcon = (props) => (
-	<svg {...base} {...props}>
-		<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
-	</svg>
-);
-
-export const LinkedInIcon = (props) => (
-	<svg {...base} fill="currentColor" stroke="none" {...props}>
-		<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.06c.53-1 1.84-2.06 3.8-2.06 4.06 0 4.81 2.67 4.81 6.15V21h-4v-4.93c0-1.18-.02-2.69-1.64-2.69-1.64 0-1.9 1.28-1.9 2.6V21h-4V9.75Z" />
-	</svg>
-);
-
-export const MapPinIcon = (props) => (
-	<svg {...base} {...props}>
-		<path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z" />
-		<circle cx="12" cy="10" r="2.5" />
-	</svg>
-);
-
-export const ArrowRightIcon = (props) => (
-	<svg {...base} {...props}>
-		<path d="M5 12h14M13 6l6 6-6 6" />
-	</svg>
-);
-
-export const ExternalIcon = (props) => (
-	<svg {...base} {...props}>
+export const ExternalIcon = (p) => (
+	<svg {...base(p)}>
 		<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" />
 	</svg>
 );
-
-export const ChevronDownIcon = (props) => (
-	<svg {...base} {...props}>
-		<path d="m6 9 6 6 6-6" />
+export const LinkedInIcon = (p) => (
+	<svg {...base({ ...p, fill: 'currentColor', stroke: 'none' })}>
+		<path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
 	</svg>
 );
 
-export const CheckIcon = (props) => (
-	<svg {...base} {...props}>
-		<path d="m5 12 5 5 9-10" />
-	</svg>
-);
-
-export const SparkIcon = (props) => (
-	<svg {...base} {...props}>
-		<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.5 2.5M15.2 15.2l2.5 2.5M6.3 17.7l2.5-2.5M15.2 8.8l2.5-2.5" />
-	</svg>
+const fileIconLabel = { md: 'M↓', ts: 'TS', json: '{}', yml: 'Y', sh: '$' };
+export const FileIcon = ({ type }) => (
+	<span className={`ficon ficon--${type}`} aria-hidden>
+		{fileIconLabel[type]}
+	</span>
 );

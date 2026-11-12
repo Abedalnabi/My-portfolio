@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { contact, emailjsConfig, profile } from '../data';
-import { PlayIcon } from './Icons';
+import { MailIcon } from './Icons';
 
 const empty = { name: '', email: '', message: '' };
 
@@ -44,16 +44,13 @@ const ContactForm = () => {
 
 	return (
 		<form className="run-form" onSubmit={onSubmit}>
-			<p className="run-form__title">
-				<span className="tk-c">$</span> ./contact.sh --send
-			</p>
 			<div className="run-form__grid">
 				<label>
-					<span>--name</span>
+					<span>Name</span>
 					<input name="name" required autoComplete="name" value={form.name} onChange={onChange} placeholder="Your name" />
 				</label>
 				<label>
-					<span>--email</span>
+					<span>Email</span>
 					<input
 						type="email"
 						name="email"
@@ -65,7 +62,7 @@ const ContactForm = () => {
 					/>
 				</label>
 				<label className="run-form__wide">
-					<span>--message</span>
+					<span>Message</span>
 					<textarea
 						name="message"
 						rows={5}
@@ -78,10 +75,10 @@ const ContactForm = () => {
 			</div>
 			<div className="run-form__foot">
 				<button className="btn btn--primary" type="submit" disabled={status === 'sending'}>
-					<PlayIcon width={14} height={14} /> {status === 'sending' ? 'Running…' : 'Run'}
+					<MailIcon width={15} height={15} /> {status === 'sending' ? 'Sending…' : 'Send message'}
 				</button>
 				<p role="status" aria-live="polite" className={`run-form__out run-form__out--${status}`}>
-					{status === 'sending' && '› sending message…'}
+					{status === 'sending' && 'Sending…'}
 					{status === 'sent' && '✓ Message sent. I’ll get back to you soon.'}
 					{status === 'error' && `✗ Something went wrong. Email me directly at ${contact.email}`}
 				</p>

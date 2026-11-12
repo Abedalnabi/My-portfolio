@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fileById, tree } from '../files';
 import { ChevronIcon, FileIcon } from './Icons';
 
@@ -20,7 +20,13 @@ const FileRow = ({ id, depth, active, onOpen }) => {
 };
 
 const Explorer = ({ active, onOpen }) => {
-	const [open, setOpen] = useState({ experience: true, projects: true });
+	const [open, setOpen] = useState({ assets: false, experience: true, projects: true });
+
+	// Reveal the active file if it sits inside a collapsed folder.
+	useEffect(() => {
+		const dir = active?.includes('/') && active.split('/')[0];
+		if (dir) setOpen((o) => (o[dir] ? o : { ...o, [dir]: true }));
+	}, [active]);
 
 	return (
 		<div className="explorer">

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { contact, experiences, profile, projects } from '../data';
-import { files, shortcuts } from '../files';
+import { files, shortcuts, tree, fileById } from '../files';
 import { CloseIcon } from './Icons';
 
 const PROMPT = 'guest@mohammad';
@@ -8,8 +8,10 @@ const PROMPT = 'guest@mohammad';
 const commandHelp = [
 	['help', 'list available commands'],
 	['whoami', 'who I am, in one line'],
-	['ls', 'list all files'],
+	['ls [folder]', 'list files'],
+	['tree', 'show the whole project'],
 	['open <file>', 'open a file in the editor (Tab completes)'],
+	['cat <file>', 'print a file'],
 	['about · experience · projects', 'jump to a section'],
 	['skills · education · contact', 'more sections'],
 	['email · linkedin', 'reach me directly'],
@@ -62,11 +64,42 @@ const Terminal = ({ onOpen, onClose }) => {
 			case 'whoami':
 				say(`${profile.name} — ${profile.role}. ${profile.currently}, based in ${contact.location}.`);
 				break;
-			case 'ls':
-				files.forEach((f) => say(f.id, { file: f.id }));
+			case 'ls': {
+				const dir = arg.replace(/\/$/, '');
+				if (!dir) {
+					say(tree.map((n) => (n.type === 'folder' ? `${n.name}/` : n.id)).join('  '));
+				} else {
+					const node = tree.find((n) => n.type === 'folder' && n.name === dir);
+					if (node) node.children.forEach((id) => say(fileById[id].name, { file: id }));
+					else say(`ls: cannot access '${dir}': No such file or directory`, { err: true });
+				}
+				break;
+			}
+			case 'tree':
+				say('.');
+				tree.forEach((n, i) => {
+					const last = i === tree.length - 1;
+					if (n.type === 'file') return say(`${last ? '└──' : '├──'} ${n.id}`, { file: n.id });
+					say(`${last ? '└──' : '├──'} ${n.name}/`);
+					n.children.forEach((id, j) =>
+						say(`${last ? '    ' : '│   '}${j === n.children.length - 1 ? '└──' : '├──'} ${fileById[id].name}`, { file: id })
+					);
+				});
+				break;
+			case 'cat': {
+				const f = findFile(arg);
+				if (!f) say(`cat: ${arg || 'missing operand'}: No such file or directory`, { err: true });
+				else if (f.kind === 'code')
+					f.lines.forEach((l) => say('  '.repeat(l.indent) + l.tokens.map((t) => t[1]).join('')));
+				else if (f.kind === 'image') say(`cat: ${f.id}: binary file (image) — use "open ${f.id}"`, { err: true });
+				else openFile(f.id);
+				break;
+			}
+			case './contact.sh':
+				say('Usage: ./contact.sh "Your name" "you@company.com" "Your message"');
+				say('Tip: the contact form at the bottom of README.md sends it for you.', { muted: true });
 				break;
 			case 'open':
-			case 'cat':
 			case 'code':
 			case 'vim': {
 				const f = findFile(arg);
@@ -94,7 +127,6 @@ const Terminal = ({ onOpen, onClose }) => {
 				openFile(shortcuts.education);
 				break;
 			case 'contact':
-			case './contact.sh':
 				say(`email     ${contact.email}`);
 				say(`phone     ${contact.phone}`);
 				say(`linkedin  ${contact.linkedin}`);
@@ -155,12 +187,12 @@ const Terminal = ({ onOpen, onClose }) => {
 			setValue(i < 0 ? '' : history[i]);
 		} else if (e.key === 'Tab') {
 			e.preventDefault();
-			const m = value.match(/^(open|cat|code|vim)\s+(.*)$/i);
+			const m = value.match(/^(open|cat|code|vim|ls)\s+(.*)$/i);
 			if (m) {
 				const match = files.find((f) => f.id.toLowerCase().startsWith(m[2].toLowerCase()) || f.name.toLowerCase().startsWith(m[2].toLowerCase()));
 				if (match) setValue(`${m[1]} ${match.id}`);
 			} else {
-				const cmds = ['help', 'whoami', 'ls', 'open ', 'about', 'experience', 'projects', 'skills', 'education', 'contact', 'email', 'linkedin', 'clear'];
+				const cmds = ['help', 'whoami', 'ls', 'tree', 'open ', 'cat ', 'about', 'experience', 'projects', 'skills', 'education', 'contact', 'email', 'linkedin', 'clear'];
 				const match = cmds.find((c) => c.startsWith(value.toLowerCase()));
 				if (match && value) setValue(match);
 			}

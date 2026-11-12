@@ -3,10 +3,9 @@ import { contact, profile } from './data';
 import { fileById } from './files';
 import Explorer from './components/Explorer';
 import CodeView from './components/CodeView';
-import ContactForm from './components/ContactForm';
 import Terminal from './components/Terminal';
 import CommandPalette from './components/CommandPalette';
-import { ProjectPreview, Readme } from './components/Previews';
+import { ImageView, Readme } from './components/Previews';
 import {
 	BranchIcon,
 	CloseIcon,
@@ -42,6 +41,11 @@ const App = () => {
 		setActive(id);
 		if (isMobile()) setSidebar(false);
 	}, []);
+
+	const openSection = (section) => {
+		open(DEFAULT);
+		setTimeout(() => document.getElementById(section)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+	};
 
 	const close = (id) => {
 		setTabs((t) => {
@@ -102,7 +106,7 @@ const App = () => {
 					<span>{profile.name.toLowerCase().replace(' ', '-')}</span>
 					<kbd>Ctrl P</kbd>
 				</button>
-				<button className="titlebar__cta" onClick={() => open('contact.sh')}>
+				<button className="titlebar__cta" onClick={() => openSection('contact')}>
 					Hire me
 				</button>
 			</header>
@@ -139,7 +143,7 @@ const App = () => {
 							<div key={id} className={`tab${id === active ? ' is-active' : ''}`}>
 								<button role="tab" aria-selected={id === active} onClick={() => setActive(id)}>
 									<FileIcon type={f.icon} />
-									{f.name}
+									{f.kind === 'readme' ? `Preview ${f.name}` : f.name}
 								</button>
 								<button className="tab__close" onClick={() => close(id)} aria-label={`Close ${f.name}`}>
 									<CloseIcon width={13} height={13} />
@@ -175,14 +179,9 @@ const App = () => {
 							</ul>
 						</div>
 					)}
-					{file?.kind === 'code' && (
-						<>
-							<CodeView lines={file.lines} />
-							{file.withForm && <ContactForm />}
-						</>
-					)}
-					{file?.view === 'readme' && <Readme onOpen={open} />}
-					{file?.view === 'project' && <ProjectPreview project={file.data} />}
+					{file?.kind === 'code' && <CodeView lines={file.lines} />}
+					{file?.kind === 'readme' && <Readme />}
+					{file?.kind === 'image' && <ImageView file={file} />}
 				</div>
 
 				{terminal && <Terminal onOpen={open} onClose={() => setTerminal(false)} />}
